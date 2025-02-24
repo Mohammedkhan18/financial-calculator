@@ -22,7 +22,7 @@
  */
 
 // Import functions from this week's arrays homework.
-const { addUpArrayElements } = require('./src/arrays-03');
+const { addUpArrayElements } = require('./src/arrays-03.js'); 
 
 
 // Read command-line arguments (skipping "node" and the script path). Put the rest into an args array
@@ -42,7 +42,22 @@ if (transactions.length === 0) {
   process.exit(1);
 }
 
-// TODO: Before creating the funFacts array, define the following variables:
+const totalTransactions = transactions.length;
+const totalSum = function addUpArrayElements(transactions) {
+  let totalSum = 0;
+
+  transactions.reduce(function (num) {
+    totalSum += num;
+  })
+  return totalSum;
+
+
+}
+const averageTransaction = totalSum / totalTransactions;
+const  totalIncome = transactions.filter(t => t > 0).reduce((sum, t) => sum + t, 0);
+const totalExpenses = transactions.filter(t => t < 0).reduce((sum, t) => sum + t, 0);
+const netBalance = totalIncome + totalExpenses;
+
 // - totalTransactions: Total number of transactions (use array length).
 // - totalSum: Sum of all transactions (use addUpArrayElements function).
 // - averageTransaction: Average transaction value (calculate using totalSum and totalTransactions).
