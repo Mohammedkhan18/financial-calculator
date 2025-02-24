@@ -22,7 +22,7 @@
  */
 
 // Import functions from this week's arrays homework.
-const { addUpArrayElements } = require('./src/arrays-03.js'); 
+const { addUpArrayElements } = require('./src/arrays-03.js');
 
 
 // Read command-line arguments (skipping "node" and the script path). Put the rest into an args array
@@ -43,16 +43,7 @@ if (transactions.length === 0) {
 }
 
 const totalTransactions = transactions.length;
-const totalSum = function addUpArrayElements(transactions) {
-  let totalSum = 0;
-
-  transactions.reduce(function (num) {
-    totalSum += num;
-  })
-  return totalSum;
-
-
-}
+const totalSum =  addUpArrayElements(transactions);
 const averageTransaction = totalSum / totalTransactions;
 const  totalIncome = transactions.filter(t => t > 0).reduce((sum, t) => sum + t, 0);
 const totalExpenses = transactions.filter(t => t < 0).reduce((sum, t) => sum + t, 0);

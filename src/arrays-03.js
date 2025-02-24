@@ -15,3 +15,6 @@ function addUpArrayElements(arr) {
 
 }
 
+module.exports = {
+  addUpArrayElements,
+};
